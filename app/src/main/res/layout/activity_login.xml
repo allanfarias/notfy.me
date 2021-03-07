@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/webview_layout"
+    android:background="#FFFFFF"
+    tools:context="me.notfy.notfyme.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/telalogin"
+        android:orientation="vertical"
+        android:background="#FFF"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- "Barra" do topo -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/barratopo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:text="MotoStart"
+                android:textSize="32dp"
+                android:layout_width="match_parent"
+                android:layout_height="@android:dimen/app_icon_size">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- "Conteiner" do aplicativo -->
+        <WebView
+            android:id="@+id/login"
+            android:scrollbarStyle="insideOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <!-- Dialogo "Carregando..." -->
+    <RelativeLayout
+        android:id="@+id/carregando"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

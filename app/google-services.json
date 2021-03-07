@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "161067744028",
+    "firebase_url": "https://notifyme-web.firebaseio.com",
+    "project_id": "notifyme-web",
+    "storage_bucket": "notifyme-web.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161067744028:android:a05f0c5d8ea566cd2c58d9",
+        "android_client_info": {
+          "package_name": "me.notfy.notfyme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161067744028-e004tr8ej21k57748tk51vnflmehjgul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwfxUYOulcD6EXEYfkr3PWwf5k23Pphzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161067744028-e004tr8ej21k57748tk51vnflmehjgul.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
