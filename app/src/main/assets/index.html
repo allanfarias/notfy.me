@@ -32,6 +32,41 @@ var app = {
 
 };
 
+var dataBase = {
+    loggedIn : false,
+    userId : 0,
+    receiptId : 0,
+    following :
+    {
+        time : 0,
+        total : 0,
+        items :
+        [
+            {
+                senderId : 0,
+                senderName : 0,
+                senderAvatar : ""
+            }
+        ]
+    },
+    notifications :
+    {
+        time : 0,
+        total : 0,
+        [
+            {
+                notificationId : 0,
+                notificationTitle : "",
+                notificationText : ""
+            }
+        ]
+    }
+};
+
+
+localStorage.setItem("notfyme", '{"objeto":{"membro1":1,"membro2":2}}');
+
+
 </script>
 
 

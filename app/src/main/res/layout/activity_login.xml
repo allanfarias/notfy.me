@@ -21,8 +21,9 @@
             android:layout_height="wrap_content"
             android:visibility="visible">
             <androidx.appcompat.widget.AppCompatTextView
-                android:text="MotoStart"
-                android:textSize="32dp"
+                android:text="Login"
+                android:textSize="28dp"
+                android:gravity="center_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="@android:dimen/app_icon_size">
 

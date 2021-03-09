@@ -42,163 +42,15 @@
             }
         }
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
 
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-messaging.js"></script>
-
-
-
-
-
 <script>
 
-var app = {
 
-    newRecipient : function(senderId, fcmToken)
-    {
-		$.ajax({
-			type: "POST",
-			url: "https://notfy.me/?endpoint=newrecipient",
-			data: {
-			    "senderId" : senderId,
-			    "fcmToken" : fcmToken
-			},
-			success: function(data)
-			{
-				if(data.sucesso == true)
-				{
-				    alert(data);
-				}
-			},
-			dataType: "json",
-			error : function(xhr,status,error)
-			{
-				alert("Falha na comunicaÃ§Ã£o. NÃ£o foi possÃ­vel obter a informaÃ§Ã£o solicitada, tente novamente.");
-			}
-		});
-    },
+alert("get "+JSON.parse(localStorage.getItem("notfyme")).objeto.membro2);
 
-    /*printaToken : function(token)
-    {
-        alert(token);
-        document.body.innerHTML = "<h3>"+token+"</h3>";
-    }*/
-
-};
-
-</script>
-
-
-
-
-
-<script>
-
-    var sender = {
-        id : 1
-    };
-
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBEx9OYU4a-XjTIkVkak8PqUFhXUj0FBMQ",
-    authDomain: "notifyme-web.firebaseapp.com",
-    databaseURL: "https://notifyme-web.firebaseio.com",
-    projectId: "notifyme-web",
-    storageBucket: "notifyme-web.appspot.com",
-    messagingSenderId: "161067744028",
-    appId: "1:161067744028:web:df4e2775ebc32e182c58d9",
-    measurementId: "G-ERH2GD4ETL"
-  };
-  // Initialize Firebase
-
-    firebase.initializeApp(firebaseConfig);
-
-    firebase.analytics();
-
-    var messaging = firebase.messaging();
-
-    messaging.usePublicVapidKey('BCKd6moW-PQ5i7QHavwyKMdIgGVYzwvO3gm1mWXijm8P-eGAYdGA9q1tyYpCRU8i0-lWBOFgSDvbPKQ5FyBJyDw');
-
-// Get Instance ID token. Initially this makes a network call, once retrieved
-// subsequent calls to getToken will return from cache.
-messaging.getToken().then((currentToken) => {
-  if (currentToken) {
-
-      app.newRecipient(sender.id,currentToken);
-
-      console.log(currentToken);
-      //document.body.innerHTML = "<h1>"+currentToken+"</h1>";
-
-      var ctok = document.createElement("div");
-      ctok.innerHTML = currentToken;
-
-    //document.body.appendChild(ctok);
-
-        //document.write(currentToken);
-    //sendTokenToServer(currentToken);
-    //updateUIForPushEnabled(currentToken);
-  } else {
-    // Show permission request.
-    console.log('No Instance ID token available. Request permission to generate one.');
-    // Show permission UI.
-    //updateUIForPushPermissionRequired();
-    //setTokenSentToServer(false);
-  }
-}).catch((err) => {
-  console.log('An error occurred while retrieving token. ', err);
-  showToken('Error retrieving Instance ID token. ', err);
-  //setTokenSentToServer(false);
-});
-
-
-
-// Callback fired if Instance ID token is updated.
-messaging.onTokenRefresh(() => {
-  messaging.getToken().then((refreshedToken) => {
-
-    app.newRecipient(sender.id,refreshedToken);
-
-    console.log('Token refreshed.');
-    console.log(refreshedToken);
-    //document.write('Token refreshed.');
-
-      var ctok = document.createElement("div");
-      ctok.innerHTML = refreshedToken;
-
-    //document.body.appendChild(ctok);
-
-    // Indicate that the new Instance ID token has not yet been sent to the
-    // app server.
-    setTokenSentToServer(false);
-    // Send Instance ID token to app server.
-    sendTokenToServer(refreshedToken);
-    // ...
-  }).catch((err) => {
-    console.log('Unable to retrieve refreshed token ', err);
-    showToken('Unable to retrieve refreshed token ', err);
-  });
-});
-
-
-// Handle incoming messages. Called when:
-// - a message is received while the app has focus
-// - the user clicks on an app notification created by a service worker
-//   `messaging.setBackgroundMessageHandler` handler.
-messaging.onMessage((payload) => {
-  console.log('Message received. ', payload);
-  //document.write(payload);
-  // ...
-});
 
 </script>
 
@@ -214,7 +66,6 @@ messaging.onMessage((payload) => {
     <div class="module twitch">
         <!--<div id="twitch-embed"></div>-->
         <div id="twitch-embed">
-            <iframe src="https://allan.notfy.me/index2.html"></iframe>
         </div>
         <!--<script src="https://embed.twitch.tv/embed/v1.js"></script>-->
         <a href="#">Ver na Twitch</a>
@@ -262,12 +113,6 @@ messaging.onMessage((payload) => {
 				if(this.readyState == 4 && this.status == 200)
 				{
 				    console.log(xhr.responseText);
-                    var embed = new Twitch.Embed("twitch-embed", {
-                        width: videoWidth+"px",
-                        height: videoHeight+"px",
-                        channel: "say_cat_oficial",
-                        layout: "video",
-                    });
 				}
 			};
 
@@ -279,14 +124,6 @@ messaging.onMessage((payload) => {
 		}
 
         getPageData();
-    </script>
-    <script>
-                            var embed = new Twitch.Embed("twitch-embed", {
-                        width: videoWidth+"px",
-                        height: videoHeight+"px",
-                        channel: "say_cat_oficial",
-                        layout: "video",
-                    });
     </script>
 </body>
 </html>
